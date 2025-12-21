@@ -249,6 +249,11 @@ section a:hover {
     background: var(--bg-cream);
 }
 
+.email-container {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
 .email-text {
     display: inline-block;
     padding: 1rem 2rem;
@@ -270,7 +275,6 @@ section a:hover {
 .contact-links {
     display: flex;
     gap: 1.5rem;
-    margin-top: 2rem;
     flex-wrap: wrap;
     align-items: center;
 }
