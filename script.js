@@ -1,3 +1,13 @@
+// Email obfuscation
+document.addEventListener('DOMContentLoaded', function() {
+    const emailLink = document.getElementById('email-link');
+    if (emailLink) {
+        const user = 'varvara.arzt';
+        const domain = 'tuwien.ac.at';
+        emailLink.href = 'mailto:' + user + '@' + domain;
+    }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -12,7 +22,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active state to navigation links on scroll
+// Add active class to navigation links based on scroll position
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -27,30 +37,8 @@ window.addEventListener('scroll', () => {
 
     document.querySelectorAll('nav a').forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
     });
-});
-
-// Add animation on scroll for project cards
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.project-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
 });
