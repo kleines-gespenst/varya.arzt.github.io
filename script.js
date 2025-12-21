@@ -1,13 +1,3 @@
-// Email obfuscation
-document.addEventListener('DOMContentLoaded', function() {
-    const emailLink = document.getElementById('email-link');
-    if (emailLink) {
-        const user = 'varvara.arzt';
-        const domain = 'tuwien.ac.at';
-        emailLink.href = 'mailto:' + user + '@' + domain;
-    }
-});
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
